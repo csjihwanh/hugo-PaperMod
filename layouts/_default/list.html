@@ -67,7 +67,7 @@
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
-    <h2 class="entry-hint-parent">
+    <p class="entry-hint-parent">
       {{- .Title }}
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
@@ -77,7 +77,7 @@
         </svg>
       </span>
       {{- end }}
-    </h2>
+    </p>
   </header>
   {{- if (ne (.Param "hideSummary") true) }}
   <div class="entry-content">

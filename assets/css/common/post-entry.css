@@ -35,9 +35,9 @@
 
 .post-entry {
     position: relative;
-    margin-bottom: var(--gap);
-    padding: var(--gap);
-    background: var(--entry);
+    margin-bottom: 0; /* var(--gap); */
+    padding: 0; /* var(--gap); */
+    background: 0; /* var(--entry); */
     border-radius: var(--radius);
     transition: transform 0.1s;
     border: 1px solid var(--border);
