@@ -1,0 +1,17 @@
+<!-- partials/recursive_list.html -->
+{{- $subSections := .Sections }}
+{{- $subPages := where .RegularPages "Draft" "!=" true }}
+
+{{- if or (gt (len $subSections) 0) (gt (len $subPages) 0) }}
+  <!-- Add a simple margin-left to nested <ul> -->
+  <ul style="margin-left: 1.5em;">
+    {{- range $subSections }}
+      <li><strong>{{ .Title }}</strong>
+        {{- partial "recursive_list" . }}
+      </li>
+    {{- end }}
+    {{- range $subPages }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+{{- end }}
